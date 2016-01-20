@@ -51,10 +51,11 @@ class Auth extends AbstractBasic {
 	 * @param IUserSession $userSession
 	 */
 	public function __construct(ISession $session,
-								IUserSession $userSession) {
+								IUserSession $userSession,
+								$principalPrefix = 'principals/users/') {
 		$this->session = $session;
 		$this->userSession = $userSession;
-		$this->principalPrefix = 'principals/users/';
+		$this->principalPrefix = $principalPrefix;
 	}
 
 	/**
